@@ -7,4 +7,8 @@ import org.springframework.boot.autoconfigure.security.SecurityProperties;
 
 public interface UserService {
     UserLoginEntity saveUserDetails(UserLoginEntity userLoginEntity);
+
+    UserLoginEntity findByEmailId(String email);
+
+
 }

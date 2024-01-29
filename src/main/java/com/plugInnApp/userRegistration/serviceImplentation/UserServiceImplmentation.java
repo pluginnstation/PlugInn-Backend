@@ -15,4 +15,9 @@ public class UserServiceImplmentation implements UserService {
     public UserLoginEntity saveUserDetails(UserLoginEntity userLoginEntity) {
         return userRepository.save(userLoginEntity);
     }
+
+    @Override
+    public UserLoginEntity findByEmailId(String email){
+        return userRepository.findByEmail(email);
+    }
 }

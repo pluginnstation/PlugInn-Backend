@@ -13,9 +13,13 @@ public class UserRegistrationController {
     UserService userService;
 
     @PostMapping("/userLogin")
-    public UserLoginEntity saveUserData(@RequestBody UserLoginEntity userLoginEntity){
-
-        return userService.saveUserDetails(userLoginEntity);
+    public UserLoginEntity saveUserData(@RequestBody UserLoginEntity userLoginEntity) {
+        UserLoginEntity user = userService.findByEmailId(userLoginEntity.getEmail());
+        if (user!=null) {
+            return userService.saveUserDetails(userLoginEntity);
+        }else{
+            return user;
+        }
     }
 
 }
