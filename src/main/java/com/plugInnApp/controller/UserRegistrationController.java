@@ -1,13 +1,11 @@
-package com.plugInnApp.userRegistration.controller;
+package com.plugInnApp.controller;
 
 import com.plugInnApp.globalExceptions.ResourceNotFoundException;
-import com.plugInnApp.userRegistration.entity.UserLoginEntity;
-import com.plugInnApp.userRegistration.repository.UserRepository;
-import com.plugInnApp.userRegistration.service.UserService;
+import com.plugInnApp.entity.UserLoginEntity;
+import com.plugInnApp.repository.UserRepository;
+import com.plugInnApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")

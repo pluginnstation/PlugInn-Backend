@@ -1,8 +1,8 @@
-package com.plugInnApp.userRegistration.serviceImplentation;
+package com.plugInnApp.serviceImpl;
 
-import com.plugInnApp.userRegistration.entity.UserLoginEntity;
-import com.plugInnApp.userRegistration.repository.UserRepository;
-import com.plugInnApp.userRegistration.service.UserService;
+import com.plugInnApp.entity.UserLoginEntity;
+import com.plugInnApp.repository.UserRepository;
+import com.plugInnApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

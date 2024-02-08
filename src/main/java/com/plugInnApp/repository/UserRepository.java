@@ -1,6 +1,6 @@
-package com.plugInnApp.userRegistration.repository;
+package com.plugInnApp.repository;
 
-import com.plugInnApp.userRegistration.entity.UserLoginEntity;
+import com.plugInnApp.entity.UserLoginEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<UserLoginEntity, Integer> {
