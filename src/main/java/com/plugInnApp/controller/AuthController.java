@@ -36,7 +36,7 @@ public class AuthController {
     private UserService userService;
 
     @Autowired
-    private UserRepository userLoginRepository;
+    private UserRepository userRepository;
 
     private Logger logger = LoggerFactory.getLogger(AuthController.class);
     @PostMapping("/login")
@@ -76,9 +76,9 @@ public class AuthController {
     @PutMapping("/editProfile/{id}")
     public UserLoginEntity updateUserData(@RequestBody UserLoginEntity userLoginEntity, @PathVariable String id){
 
-        UserLoginEntity user = userRepo.findByEmail(username).orElseThrow(() ->new RuntimeException("User not found"));
+        UserLoginEntity user = userRepository.findByEmail(userLoginEntity.getEmail());
 
-        Optional<UserLoginEntity> updateUserLoginDetails = userLoginRepository.findById(id);
+        Optional<UserLoginEntity> updateUserLoginDetails = userRepository.findById(id);
         String tempEmail = userLoginEntity.getEmail();
         if(updateUserLoginDetails.isPresent()){
         updateUserLoginDetails.get().setName(userLoginEntity.getName());
@@ -86,8 +86,10 @@ public class AuthController {
         updateUserLoginDetails.get().setPassword(userLoginEntity.getPassword());
 //        updateUserLoginDetails.get().setEmail(userLoginEntity.getEmail());
         }
-        return userLoginRepository.save(updateUserLoginDetails.get());
+        return userRepository.save(updateUserLoginDetails.get());
     }
+
+
 
 
 

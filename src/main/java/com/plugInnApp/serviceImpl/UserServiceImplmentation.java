@@ -36,7 +36,7 @@ public class UserServiceImplmentation implements UserService {
         return userRepository.findAll();
     }
 
-    @Override
+
     public Optional<UserLoginEntity> findUserById(String userId) {
         return userRepository.findById(userId);
     }

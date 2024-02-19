@@ -33,6 +33,7 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .requestMatchers("/auth/login").permitAll()
                 .requestMatchers("/auth/createUser").permitAll()
+                .requestMatchers("/find/charging-stations").permitAll()
                 .requestMatchers("/swagger-ui/index.html").permitAll()
                 .anyRequest()
                 .authenticated()
