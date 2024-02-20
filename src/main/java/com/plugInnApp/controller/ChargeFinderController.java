@@ -40,6 +40,7 @@ public class ChargeFinderController {
 //                        String responseBody = response.getResponseBody(StandardCharsets.UTF_8);
                         ChargingPointResponse responseBody = objectMapper.readValue(response.getResponseBody(StandardCharsets.UTF_8), ChargingPointResponse.class);
                         System.out.println(responseBody.toString());
+                        System.out.println(responseBody.toString()+"new changed added to plugInn github file");
                         // Close client
                         client.close();
                         // Return response body
