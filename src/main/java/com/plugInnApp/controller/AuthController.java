@@ -50,6 +50,7 @@ public class AuthController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+
     private void doAuthenticate(String email, String password){
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(email,password);
         try{

@@ -33,8 +33,13 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .requestMatchers("/auth/login").permitAll()
                 .requestMatchers("/auth/createUser").permitAll()
-                .requestMatchers("/find/charging-stations").permitAll()
-                .requestMatchers("/swagger-ui/index.html").permitAll()
+                .requestMatchers("/find/current-Charging-Station").permitAll()
+                .requestMatchers("/swagger-ui.html#").permitAll()
+                .requestMatchers("/swagger-ui-custom.html").permitAll()
+                .requestMatchers("/home/test").permitAll()
+                .requestMatchers("/find/getSourceToDestination").permitAll()
+                // swagger-ui-custom.html
+
                 .anyRequest()
                 .authenticated()
                 .and().exceptionHandling(ex -> ex.authenticationEntryPoint(point))

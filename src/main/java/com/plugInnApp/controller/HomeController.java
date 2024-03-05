@@ -13,7 +13,7 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/home")
+    @RequestMapping("/home")
 public class HomeController {
     @Autowired
     private UserService userService;
@@ -30,6 +30,9 @@ public class HomeController {
     public String getLoggedInUser(Principal principal){
         return principal.getName();
     }
-
+    @GetMapping("/test")
+    public String getTestApi(){
+        return "testing Api";
+    }
 
 }
